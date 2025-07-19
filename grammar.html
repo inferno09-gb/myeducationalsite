@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grammar Lessons</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Grammar Lessons</h1>
+    <nav>
+      <a href="index.html">← Home</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Past Simple Tense</h2>
+      <p>We use the past simple to talk about actions that happened in the past. For example: "I visited Paris last year."</p>
+    </section>
+  </main>
+</body>
+</html>
+<section>
+  <h2>Past Simple Quiz</h2>
+  <form id="quizForm">
+    <p>1. I ____ to the store yesterday.</p>
+    <label><input type="radio" name="q1" value="go" /> go</label><br />
+    <label><input type="radio" name="q1" value="went" /> went</label><br />
+    <label><input type="radio" name="q1" value="gone" /> gone</label><br />
+
+    <p>2. She ____ a book last night.</p>
+    <label><input type="radio" name="q2" value="read" /> read</label><br />
+    <label><input type="radio" name="q2" value="reads" /> reads</label><br />
+    <label><input type="radio" name="q2" value="reading" /> reading</label><br />
+
+    <button type="button" onclick="checkAnswers()">Submit</button>
+  </form>
+
+  <div id="result"></div>
+</section>
+
+<script>
+function checkAnswers() {
+  const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+  const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+  let score = 0;
+
+  if (q1 === "went") score++;
+  if (q2 === "read") score++;
+
+  document.getElementById("result").innerText = `Your score: ${score}/2`;
+}
+</script>
